@@ -1,0 +1,65 @@
+scalar DateType
+
+type Review {
+	reviewer: String!
+	review: String!
+}
+
+type Book {
+	_id: ID!
+	title: String!
+	author: String!
+	publishedDate: DateType!
+	pagesCount: Int!
+	reviews: [Review!]
+}
+
+type DeletedBook {
+	_id: ID!
+	title: String!
+	author: String!
+	publishedDate: DateType!
+	pagesCount: Int!
+	deleted: DateType!
+	reviews: [Review!]
+}
+
+input BookInputs {
+	title: String!
+	author: String = "Anonymous"
+	pagesCount: Int
+	publishedDate: DateType!
+}
+
+input BookUpdateInputs {
+	title: String
+	author: String
+	pagesCount: Int
+	publishedDate: DateType
+}
+
+input ReviewInputs {
+	review: String!
+	reviewer: String = "Guest"
+}
+
+###### Top Level Decs
+
+type Query {
+	bookList(
+		author: String
+		title: String
+		pagesMin: Int
+		pagesMax: Int
+	): [Book!]!
+
+	book(id: ID!): Book!
+	deletedBookList: [DeletedBook!]!
+}
+
+type Mutation {
+	bookAdd(book: BookInputs!): [Book!]!
+	bookUpdate(id: ID!, changes: BookUpdateInputs!): [Book!]!
+	bookDelete(id: ID!): [Book!]!
+	reviewAdd(review: ReviewInputs!, bookId: ID!): Book!
+}

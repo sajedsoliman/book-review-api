@@ -1,0 +1,26 @@
+{
+	"name": "book-reviewer-mern",
+	"version": "1.0.0",
+	"description": "The API Server Directory",
+	"scripts": {
+		"start": "nodemon -e js,graphql server.js"
+	},
+	"keywords": [],
+	"author": "Sajid Sulaiman",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server-express": "^2.25.2",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"google-auth-library": "^2.0.2",
+		"graphql": "^0.13.2",
+		"http-proxy-middleware": "^0.21.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongodb": "^3.1.10"
+	},
+	"devDependencies": {
+		"dotenv": "^10.0.0",
+		"nodemon": "^2.0.12"
+	}
+}
