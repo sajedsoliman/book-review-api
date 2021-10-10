@@ -60,6 +60,8 @@ const server = new ApolloServer({
 	typeDefs: fs.readFileSync("./modules/schema.graphql", "utf-8"),
 	resolvers,
 	context: getContext,
+	playground: true,
+	introspection: true,
 });
 
 function getContext({ req }) {

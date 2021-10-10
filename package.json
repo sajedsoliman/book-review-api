@@ -2,6 +2,10 @@
 	"name": "book-reviewer-mern",
 	"version": "1.0.0",
 	"description": "The API Server Directory",
+	"engines": {
+		"node": "14.x",
+		"npm": "6.x"
+	},
 	"scripts": {
 		"start": "nodemon -e js,graphql server.js"
 	},
